@@ -1,0 +1,6 @@
+
+마지막에, git push origin master 하면 에러나는데, 이때 아래의 명령어를 실행시켜야함!!
+
+git push --set-upstream origin main
+
+그리고 github 홈피에서 새로고침하면 내 소스코드가 github 사이트에 업로드됨!!
