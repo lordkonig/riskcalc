@@ -142,7 +142,7 @@
 
                                         <p> 2020.10.11 Updated
                                             <br> It may take about 40 seconds to calculate your risks. If you have
-                                            troubles with this calculator, please refreshify the calculator. </p>
+                                            troubles with this calculator, please refresh the calculator. </p>
                                     </span>
                                     <div class="simple-btn">
                                         <a href="https://riskanal.shinyapps.io/RiskCalcAFMI_ISK/" target="_blank">
@@ -194,7 +194,7 @@
                                         <p> 2020.10.23 Updated
                                             <br> It may take about 30 seconds to calculate your risks. If you have
                                             troubles with this calculator,
-                                            please refreshify the calculator. </p></span>
+                                            please refresh the calculator. </p></span>
                                     <div class="simple-btn">
                                         <a href="https://riskexam.shinyapps.io/RiskCalcAFPM25_ISK/" target="_blank">
                                         <span style="font-size:2.5em; color: yellow; font-weight: 800"> &#8658; (Click!) Calculate your future AF risk with
@@ -278,10 +278,40 @@
 
 
 
+    <!-- ===== Visitor counter (GoatCounter) — replace MYCODE with your own code ===== -->
+    <script data-goatcounter="https://MYCODE.goatcounter.com/count" async src="//gc.zgo.at/count.js"></script>
+    <div style="text-align:center; color:#c8c8c8; font-size:14px; padding:12px 0;">
+        Today <strong id="gc-today" style="color:#FAFAB4;">&middot;</strong>
+        &nbsp;&nbsp;|&nbsp;&nbsp;
+        Total <strong id="gc-total" style="color:#FAFAB4;">&middot;</strong>
+    </div>
+    <script>
+        (function () {
+            var CODE = "MYCODE"; // ← change this to your GoatCounter code
+            function show(url, id) {
+                var r = new XMLHttpRequest();
+                r.addEventListener('load', function () {
+                    try { document.getElementById(id).innerText = JSON.parse(this.responseText).count; }
+                    catch (e) { document.getElementById(id).innerText = '-'; }
+                });
+                r.addEventListener('error', function () { document.getElementById(id).innerText = '-'; });
+                r.open('GET', url); r.send();
+            }
+            var base = 'https://' + CODE + '.goatcounter.com/counter/TOTAL.json';
+            var today = new Date().toLocaleDateString('en-CA', { timeZone: 'Asia/Seoul' });
+            show(base, 'gc-total');
+            show(base + '?start=' + today, 'gc-today');
+        })();
+    </script>
+
     <footer>
         <div class="container-fluid">
             <div class="col-md-12">
-                <p> &copy; 2020 All rights reserved. Lordkonig1@gmail.com </p>
+                <p style="font-size: 0.85em; color: #aaa;">This calculator is for informational and
+                    educational purposes only. It does not provide a medical diagnosis and does not replace
+                    professional medical advice. Please consult a qualified physician about your health.</p>
+                <p> &copy; 2026 All rights reserved. Lordkonig1@gmail.com &nbsp;|&nbsp; <a href="Privacy.html"
+                        style="color:#c8c8c8;">Privacy Policy</a> </p>
             </div>
         </div>
     </footer>

@@ -208,10 +208,39 @@
     <script type="text/javascript" src="//t1.daumcdn.net/kas/static/ba.min.js" async></script>
 
 
+    <!-- ===== 방문자 카운터 (GoatCounter) — MYCODE를 본인 코드로 변경하세요 ===== -->
+    <script data-goatcounter="https://MYCODE.goatcounter.com/count" async src="//gc.zgo.at/count.js"></script>
+    <div style="text-align:center; color:#c8c8c8; font-size:14px; padding:12px 0;">
+        오늘 <strong id="gc-today" style="color:#FAFAB4;">&middot;</strong>
+        &nbsp;&nbsp;|&nbsp;&nbsp;
+        누적 <strong id="gc-total" style="color:#FAFAB4;">&middot;</strong>
+    </div>
+    <script>
+        (function () {
+            var CODE = "MYCODE"; // ← 본인 GoatCounter 코드로 변경하세요
+            function show(url, id) {
+                var r = new XMLHttpRequest();
+                r.addEventListener('load', function () {
+                    try { document.getElementById(id).innerText = JSON.parse(this.responseText).count; }
+                    catch (e) { document.getElementById(id).innerText = '-'; }
+                });
+                r.addEventListener('error', function () { document.getElementById(id).innerText = '-'; });
+                r.open('GET', url); r.send();
+            }
+            var base = 'https://' + CODE + '.goatcounter.com/counter/TOTAL.json';
+            var today = new Date().toLocaleDateString('en-CA', { timeZone: 'Asia/Seoul' });
+            show(base, 'gc-total');
+            show(base + '?start=' + today, 'gc-today');
+        })();
+    </script>
+
     <footer>
         <div class="container-fluid">
             <div class="col-md-12">
-                <p> &copy; 2020 All rights reserved. Lordkonig1@gmail.com </p>
+                <p style="font-size: 0.85em; color: #aaa;">본 계산기는 정보 제공 및 교육 목적으로 제공되며, 의학적 진단이나
+                    전문 의료진의 진료를 대체하지 않습니다. 건강에 대한 판단은 반드시 의사와 상의하시기 바랍니다.</p>
+                <p> &copy; 2026 All rights reserved. Lordkonig1@gmail.com &nbsp;|&nbsp; <a href="Privacy.html"
+                        style="color:#c8c8c8;">개인정보처리방침</a> </p>
             </div>
         </div>
     </footer>

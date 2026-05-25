@@ -1,16 +1,21 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<urlset
-      xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
-      xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-      xsi:schemaLocation="http://www.sitemaps.org/schemas/sitemap/0.9
-            http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd">
-<!-- created with Free Online Sitemap Generator www.xml-sitemaps.com -->
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+        xmlns:xhtml="http://www.w3.org/1999/xhtml">
 
+  <url>
+    <loc>https://riskcalc.netlify.app/index.html</loc>
+    <lastmod>2026-05-26</lastmod>
+    <xhtml:link rel="alternate" hreflang="en" href="https://riskcalc.netlify.app/index.html"/>
+    <xhtml:link rel="alternate" hreflang="ko" href="https://riskcalc.netlify.app/index_kr.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://riskcalc.netlify.app/index.html"/>
+  </url>
 
-<url>
-  <loc>https://riskcalc.netlify.app/</loc>
-  <lastmod>2020-11-01T13:20:57+00:00</lastmod>
-</url>
-
+  <url>
+    <loc>https://riskcalc.netlify.app/index_kr.html</loc>
+    <lastmod>2026-05-26</lastmod>
+    <xhtml:link rel="alternate" hreflang="en" href="https://riskcalc.netlify.app/index.html"/>
+    <xhtml:link rel="alternate" hreflang="ko" href="https://riskcalc.netlify.app/index_kr.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://riskcalc.netlify.app/index.html"/>
+  </url>
 
 </urlset>
