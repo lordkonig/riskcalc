@@ -209,22 +209,36 @@
 
 
     <!-- ===== 방문자 카운터 (GoatCounter) — MYCODE를 본인 코드로 변경하세요 ===== -->
-    <script data-goatcounter="https://MYCODE.goatcounter.com/count" async src="//gc.zgo.at/count.js"></script>
-    <div style="text-align:center; color:#c8c8c8; font-size:14px; padding:12px 0;">
-        오늘 <strong id="gc-today" style="color:#FAFAB4;">&middot;</strong>
-        &nbsp;&nbsp;|&nbsp;&nbsp;
-        누적 <strong id="gc-total" style="color:#FAFAB4;">&middot;</strong>
-    </div>
+    <script data-goatcounter="https://riskcalc.goatcounter.com/count" async src="//gc.zgo.at/count.js"></script>
+
+    <footer style="background-color:#313131; width:100%; height:auto; padding:24px 15px;">
+        <div style="text-align:center; color:#ddd; font-size:15px; padding-bottom:14px;">
+            오늘 <strong id="gc-today" style="color:#FAFAB4;">&middot;</strong>
+            &nbsp;&nbsp;|&nbsp;&nbsp;
+            누적 <strong id="gc-total" style="color:#FAFAB4;">&middot;</strong>
+        </div>
+        <div
+            style="text-align:center; color:#bbb; font-size:12px; line-height:1.6; max-width:760px; margin:0 auto 10px;">
+            본 계산기는 정보 제공 및 교육 목적으로 제공되며, 의학적 진단이나 전문 의료진의 진료를 대체하지 않습니다. 건강에 대한 판단은 반드시 의사와 상의하시기 바랍니다.
+        </div>
+        <div style="text-align:center; color:#fff; font-size:13px;">
+            &copy; 2026 All rights reserved. Lordkonig1@gmail.com &nbsp;|&nbsp;
+            <a href="Privacy.html" style="color:#FAFAB4; text-decoration:underline;">개인정보처리방침</a>
+        </div>
+    </footer>
     <script>
         (function () {
             var CODE = "riskcalc"; // ← 본인 GoatCounter 코드로 변경하세요
             function show(url, id) {
                 var r = new XMLHttpRequest();
                 r.addEventListener('load', function () {
-                    try { document.getElementById(id).innerText = JSON.parse(this.responseText).count; }
-                    catch (e) { document.getElementById(id).innerText = '-'; }
+                    if (this.status >= 200 && this.status < 300) {
+                        try { document.getElementById(id).innerText = JSON.parse(this.responseText).count; return; }
+                        catch (e) { }
+                    }
+                    document.getElementById(id).innerText = '0';
                 });
-                r.addEventListener('error', function () { document.getElementById(id).innerText = '-'; });
+                r.addEventListener('error', function () { document.getElementById(id).innerText = '0'; });
                 r.open('GET', url); r.send();
             }
             var base = 'https://' + CODE + '.goatcounter.com/counter/TOTAL.json';
@@ -233,17 +247,6 @@
             show(base + '?start=' + today, 'gc-today');
         })();
     </script>
-
-    <footer>
-        <div class="container-fluid">
-            <div class="col-md-12">
-                <p style="font-size: 0.85em; color: #aaa;">본 계산기는 정보 제공 및 교육 목적으로 제공되며, 의학적 진단이나
-                    전문 의료진의 진료를 대체하지 않습니다. 건강에 대한 판단은 반드시 의사와 상의하시기 바랍니다.</p>
-                <p> &copy; 2026 All rights reserved. Lordkonig1@gmail.com &nbsp;|&nbsp; <a href="Privacy.html"
-                        style="color:#c8c8c8;">개인정보처리방침</a> </p>
-            </div>
-        </div>
-    </footer>
 
 </body>
 </html>

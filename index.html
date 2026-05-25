@@ -279,22 +279,38 @@
 
 
     <!-- ===== Visitor counter (GoatCounter) — replace MYCODE with your own code ===== -->
-    <script data-goatcounter="https://MYCODE.goatcounter.com/count" async src="//gc.zgo.at/count.js"></script>
-    <div style="text-align:center; color:#c8c8c8; font-size:14px; padding:12px 0;">
-        Today <strong id="gc-today" style="color:#FAFAB4;">&middot;</strong>
-        &nbsp;&nbsp;|&nbsp;&nbsp;
-        Total <strong id="gc-total" style="color:#FAFAB4;">&middot;</strong>
-    </div>
+    <script data-goatcounter="https://riskcalc.goatcounter.com/count" async src="//gc.zgo.at/count.js"></script>
+
+    <footer style="background-color:#313131; width:100%; height:auto; padding:24px 15px;">
+        <div style="text-align:center; color:#ddd; font-size:15px; padding-bottom:14px;">
+            Today <strong id="gc-today" style="color:#FAFAB4;">&middot;</strong>
+            &nbsp;&nbsp;|&nbsp;&nbsp;
+            Total <strong id="gc-total" style="color:#FAFAB4;">&middot;</strong>
+        </div>
+        <div
+            style="text-align:center; color:#bbb; font-size:12px; line-height:1.6; max-width:760px; margin:0 auto 10px;">
+            This calculator is for informational and educational purposes only. It does not provide a medical
+            diagnosis and does not replace professional medical advice. Please consult a qualified physician
+            about your health.
+        </div>
+        <div style="text-align:center; color:#fff; font-size:13px;">
+            &copy; 2026 All rights reserved. Lordkonig1@gmail.com &nbsp;|&nbsp;
+            <a href="Privacy.html" style="color:#FAFAB4; text-decoration:underline;">Privacy Policy</a>
+        </div>
+    </footer>
     <script>
         (function () {
             var CODE = "riskcalc"; // ← change this to your GoatCounter code
             function show(url, id) {
                 var r = new XMLHttpRequest();
                 r.addEventListener('load', function () {
-                    try { document.getElementById(id).innerText = JSON.parse(this.responseText).count; }
-                    catch (e) { document.getElementById(id).innerText = '-'; }
+                    if (this.status >= 200 && this.status < 300) {
+                        try { document.getElementById(id).innerText = JSON.parse(this.responseText).count; return; }
+                        catch (e) { }
+                    }
+                    document.getElementById(id).innerText = '0';
                 });
-                r.addEventListener('error', function () { document.getElementById(id).innerText = '-'; });
+                r.addEventListener('error', function () { document.getElementById(id).innerText = '0'; });
                 r.open('GET', url); r.send();
             }
             var base = 'https://' + CODE + '.goatcounter.com/counter/TOTAL.json';
@@ -303,18 +319,6 @@
             show(base + '?start=' + today, 'gc-today');
         })();
     </script>
-
-    <footer>
-        <div class="container-fluid">
-            <div class="col-md-12">
-                <p style="font-size: 0.85em; color: #aaa;">This calculator is for informational and
-                    educational purposes only. It does not provide a medical diagnosis and does not replace
-                    professional medical advice. Please consult a qualified physician about your health.</p>
-                <p> &copy; 2026 All rights reserved. Lordkonig1@gmail.com &nbsp;|&nbsp; <a href="Privacy.html"
-                        style="color:#c8c8c8;">Privacy Policy</a> </p>
-            </div>
-        </div>
-    </footer>
 
 
 </body>
